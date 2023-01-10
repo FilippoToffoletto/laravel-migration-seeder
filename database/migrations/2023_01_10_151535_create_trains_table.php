@@ -26,6 +26,15 @@ return new class extends Migration
             In orario
             Cancellato
             */
+            $table->string('company', 20);
+            $table->string('departure_station', 50);
+            $table->string('arrival_station', 50);
+            $table->time('departure_time');
+            $table->time('arrival_time');
+            $table->string('train_code', 6);
+            $table->smallInteger('carriages_number')->nullable();
+            $table->tinyInteger('on_time')->default(1);
+            $table->tinyInteger('is_delete')->default(0);
             $table->timestamps();
         });
     }
